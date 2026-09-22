@@ -177,9 +177,9 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-22 12:00:00.000000",
+ "modified": "2026-09-22 18:30:46.000000",
  "modified_by": "Administrator",
- "module": "Fuelbuddy PARC",
+ "module": "Fuelbuddy Procurement",
  "name": "Purchase Advance Receipt Control",
  "owner": "Administrator",
  "permissions": [

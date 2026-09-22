@@ -1,9 +1,9 @@
 [project]
-name = "fuelbuddy_parc"
+name = "fuelbuddy_procurement"
 authors = [
     { name = "Fuelbuddy", email = "shantanu.mishra@fuelbuddy.in"}
 ]
-description = "Purchase Advance Receipt Control (PARC)"
+description = "Fuelbuddy procurement customisations (PARC)"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

@@ -1,4 +1,6 @@
-### Fuelbuddy PARC
+### Fuelbuddy Procurement
+
+Buying-side customisations for FuelBuddy ERPNext. First (and so far only) feature: **PARC**.
 
 Purchase Advance Receipt Control (PARC): one row per supplier advance paid against a
 Purchase Order, closed when the matching Purchase Receipt is submitted.
@@ -42,7 +44,7 @@ blocked). Each lifecycle test copies the site's latest submitted PO so company-s
 mandatory fields come along. Everything is rolled back.
 
 ```bash
-bench --site <site> execute fuelbuddy_parc.fuelbuddy_parc.doctype.purchase_advance_receipt_control.test_purchase_advance_receipt_control.run
+bench --site <site> execute fuelbuddy_procurement.fuelbuddy_procurement.doctype.purchase_advance_receipt_control.test_purchase_advance_receipt_control.run
 ```
 
 ### DB script equivalents
@@ -55,8 +57,8 @@ See `db_scripts/README.md` for names, events and the one-mechanism-at-a-time rul
 
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app https://github.com/shantanumishra-FB/fuelbuddy_parc.git --branch main
-bench install-app fuelbuddy_parc
+bench get-app https://github.com/shantanumishra-FB/fuelbuddy_procurement.git --branch main
+bench install-app fuelbuddy_procurement
 ```
 
 `bench migrate` adopts the existing custom DocType **Purchase Advance Receipt Control** into this
