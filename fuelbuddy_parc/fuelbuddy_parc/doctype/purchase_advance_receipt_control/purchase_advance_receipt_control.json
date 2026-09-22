@@ -1,0 +1,207 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-09-22 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_3o2u",
+  "payment_entry",
+  "purchase_order",
+  "purchase_receipt",
+  "column_break_xcmp",
+  "date",
+  "time",
+  "amended_from",
+  "purchase_order_details_section",
+  "qty_of_po",
+  "advance_against_po__summary_",
+  "column_break_kxby",
+  "grand_total_of_po",
+  "uom_of_item",
+  "rate_of_po",
+  "purchase_receipt_details_section",
+  "qty_of_pr",
+  "column_break_ofle",
+  "grand_total_of_pr",
+  "details_of_pending_po_section",
+  "qty_left_to_be_received_from_po",
+  "advance_paid",
+  "column_break_vbng",
+  "qty_to_be_received_against_the_advance_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_3o2u",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_entry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Payment Entry",
+   "options": "Payment Entry"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "purchase_receipt",
+   "fieldtype": "Link",
+   "label": "Purchase Receipt",
+   "options": "Purchase Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xcmp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "default": "Now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Purchase Advance Receipt Control",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "purchase_order_details_section",
+   "fieldtype": "Section Break",
+   "label": "Purchase Order Details"
+  },
+  {
+   "fieldname": "qty_of_po",
+   "fieldtype": "Float",
+   "label": "Qty of PO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_against_po__summary_",
+   "fieldtype": "Currency",
+   "label": "Advance Against PO ( Summary )",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kxby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total_of_po",
+   "fieldtype": "Currency",
+   "label": "Grand Total of PO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uom_of_item",
+   "fieldtype": "Link",
+   "label": "UOM of Item",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate_of_po",
+   "fieldtype": "Currency",
+   "label": "Rate of PO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "purchase_receipt_details_section",
+   "fieldtype": "Section Break",
+   "label": "Purchase Receipt Details"
+  },
+  {
+   "fieldname": "qty_of_pr",
+   "fieldtype": "Float",
+   "label": "Qty of PR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ofle",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total_of_pr",
+   "fieldtype": "Currency",
+   "label": "Grand Total of PR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "details_of_pending_po_section",
+   "fieldtype": "Section Break",
+   "label": "Details of Pending PO"
+  },
+  {
+   "fieldname": "qty_left_to_be_received_from_po",
+   "fieldtype": "Float",
+   "label": "Qty Left to be received from PO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_paid",
+   "fieldtype": "Currency",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vbng",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty_to_be_received_against_the_advance_paid",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty to be received against the advance paid",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-09-22 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fuelbuddy PARC",
+ "name": "Purchase Advance Receipt Control",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
