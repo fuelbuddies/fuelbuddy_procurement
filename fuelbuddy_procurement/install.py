@@ -1,5 +1,6 @@
-"""Install-time setup: the Purchase Receipt Item field a row names its advance in and the Purchase
-Receipt field a lane receipt names its receipt split hold in, disabling the DB Server Scripts this
+"""Install-time setup: the Purchase Receipt Item field a row names its advance in, the Purchase
+Receipt field a lane receipt names its receipt split hold in, the transaction type on Purchase Order
+and Purchase Receipt (adopted from production, IDEV-3511), disabling the DB Server Scripts this
 app replaces so their logic does not run twice, and the advance quantities on PARCs saved before
 those fields existed.
 
@@ -22,6 +23,28 @@ from fuelbuddy_procurement.fuelbuddy_procurement.doctype.purchase_advance_receip
 	remaining_qty,
 )
 from fuelbuddy_procurement.receipt_hold import HOLD_FIELD
+
+# The Item Group a purchase books as (IDEV-3511). Made by hand on production before this app, mandatory
+# on Purchase Order and Purchase Receipt, and copied from the order onto a GRN's receipt by the stock
+# lane. Declared exactly as production has it, behavioural flags stated even when 0, so applying it
+# there writes nothing, a site without it gets it, and a hand edit is put back by the next migrate.
+TRANSACTION_TYPE_FIELD = {
+	"fieldname": "custom_transaction_type",
+	"label": "Transaction Type",
+	"fieldtype": "Link",
+	"options": "Item Group",
+	"insert_after": "title",
+	"reqd": 1,
+	"unique": 0,
+	"read_only": 0,
+	"hidden": 0,
+	"allow_on_submit": 0,
+	"no_copy": 0,
+	"in_global_search": 1,
+	"in_list_view": 1,
+	"in_preview": 1,
+	"in_standard_filter": 1,
+}
 
 CUSTOM_FIELDS = {
 	"Purchase Receipt Item": [
@@ -57,8 +80,10 @@ CUSTOM_FIELDS = {
 			"print_hide": 1,
 			"description": "The receipt split hold this receipt posts (IDEV-3334). Set by the stock lane "
 			"only: the receipt's rows must be the hold's lines, and submitting it consumes the hold.",
-		}
+		},
+		{**TRANSACTION_TYPE_FIELD},
 	],
+	"Purchase Order": [{**TRANSACTION_TYPE_FIELD}],
 }
 
 # The three legacy prod scripts plus the two cancel scripts in db_scripts/ (same behaviour as this
